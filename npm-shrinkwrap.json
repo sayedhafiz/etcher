@@ -7357,9 +7357,9 @@
       "dev": true
     },
     "etcher-sdk": {
-      "version": "5.1.5",
-      "resolved": "https://registry.npmjs.org/etcher-sdk/-/etcher-sdk-5.1.5.tgz",
-      "integrity": "sha512-TXyfxbfJ7Zkw3EWavA3nc7F13EAs8n0BogdZqh0bHhdbQ+vNl1h2+O1F6rrFYqwS01UsXw6YZMXXCOjwYOs04A==",
+      "version": "5.1.8",
+      "resolved": "https://registry.npmjs.org/etcher-sdk/-/etcher-sdk-5.1.8.tgz",
+      "integrity": "sha512-dLLIAjnUJgf3azhtPX2N43EM4CMGtTGg7lBnQ7PfHkbh+c530CFFztBi3h0dI2IgyLJwZH9BYZEr2TY76qAHbA==",
       "dev": true,
       "requires": {
         "@balena/udif": "^1.1.0",
