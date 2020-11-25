@@ -59,6 +59,27 @@ const getErrorMessageFromCode = (errorCode: string) => {
 	return '';
 };
 
+function notifySuccess(
+	iconPath: string,
+	basename: string,
+	drives: any,
+	devices: { successful: number; failed: number },
+) {
+	notification.send(
+		'Flash complete!',
+		messages.info.flashComplete(basename, drives, devices),
+		iconPath,
+	);
+}
+
+function notifyFailure(iconPath: string, basename: string, drives: any) {
+	notification.send(
+		'Oops! Looks like the flash failed.',
+		messages.error.flashFailure(basename, drives),
+		iconPath,
+	);
+}
+
 async function flashImageToDrive(
 	isFlashing: boolean,
 	goToSuccess: () => void,
@@ -85,19 +106,15 @@ async function flashImageToDrive(
 			const {
 				results = { devices: { successful: 0, failed: 0 } },
 			} = flashState.getFlashResults();
-			notification.send(
-				'Flash complete!',
-				messages.info.flashComplete(basename, drives as any, results.devices),
-				iconPath,
-			);
+			if (results.devices.successful > 0) {
+				notifySuccess(iconPath, basename, drives, results.devices);
+			} else {
+				notifyFailure(iconPath, basename, drives);
+			}
 			goToSuccess();
 		}
 	} catch (error) {
-		notification.send(
-			'Oops! Looks like the flash failed.',
-			messages.error.flashFailure(path.basename(image.path), drives),
-			iconPath,
-		);
+		notifyFailure(iconPath, basename, drives);
 		let errorMessage = getErrorMessageFromCode(error.code);
 		if (!errorMessage) {
 			error.image = basename;

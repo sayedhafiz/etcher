@@ -155,7 +155,7 @@ export function FlashResults({
 					<Txt>{middleEllipsis(image, 24)}</Txt>
 				</Flex>
 				<Txt fontSize={24} color="#fff" mb="17px">
-					Flash Complete!
+					Flash {allFailed ? 'Failed' : 'Complete'}!
 				</Txt>
 				{skip ? <Txt color="#7e8085">Validation has been skipped</Txt> : null}
 			</Flex>
