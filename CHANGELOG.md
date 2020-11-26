@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+# v1.5.112
+## (2020-11-26)
+
+* Fix layout when the featured project is not showing [Alexis Svinartchouk]
+* Improve flashing error handling [Alexis Svinartchouk]
+* Fix modal content height on Windows [Alexis Svinartchouk]
+
+<details>
+<summary> Update etcher-sdk from 5.1.5 to 5.1.8 [Alexis Svinartchouk] </summary>
+
+> ## etcher-sdk-5.1.8
+> ### (2020-11-26)
+> 
+> * Add versionbot changelog [Alexis Svinartchouk]
+> 
+> ## etcher-sdk-5.1.7
+> ### (2020-11-25)
+> 
+> * Don't start opening drives in advance to avoid unhandled rejections [Alexis Svinartchouk]
+> * Update generated docs [Alexis Svinartchouk]
+> 
+> ## etcher-sdk-5.1.6
+> ### (2020-11-24)
+> 
+> * Do not unmount source drives [Alexis Svinartchouk]
+> * Factorize retrying transient errors [Alexis Svinartchouk]
+> * Retry opening files & block devices on transient errors [Alexis Svinartchouk]
+> * Update generated docs [Alexis Svinartchouk]
+> 
+</details>
+
+* Set useContentSize to true so the size is the same on all platforms [Alexis Svinartchouk]
+
 # v1.5.111
 ## (2020-11-23)
 
